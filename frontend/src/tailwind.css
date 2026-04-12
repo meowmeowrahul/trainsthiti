@@ -24,6 +24,10 @@
   --danger-soft: #fef3f2;
   --action-hover: #1d2939;
   --elevation-1: 0 1px 2px rgb(16 24 40 / 0.08), 0 1px 1px rgb(16 24 40 / 0.04);
+  --elevation-2:
+    0 10px 24px -18px rgb(16 24 40 / 0.28), 0 2px 6px -4px rgb(16 24 40 / 0.12);
+  --elevation-3:
+    0 16px 32px -22px rgb(16 24 40 / 0.36), 0 4px 12px -6px rgb(16 24 40 / 0.16);
 }
 
 @layer base {
@@ -67,9 +71,13 @@
 @layer components {
   .ui-card {
     border: 1px solid var(--border-subtle);
-    background: var(--surface);
+    background: var(--surface-strong);
     box-shadow: var(--elevation-1);
     border-radius: 0.875rem;
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      border-color 160ms ease;
   }
 
   .ui-card:hover {
@@ -78,13 +86,29 @@
       var(--border-subtle),
       var(--text-primary) 20%
     );
+    box-shadow: var(--elevation-2);
+    transform: translateY(-1px);
   }
 
   .ui-card-strong {
     border: 1px solid var(--border-subtle);
     background: var(--surface-strong);
-    box-shadow: var(--elevation-1);
+    box-shadow: var(--elevation-2);
     border-radius: 0.875rem;
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .ui-card-strong:hover {
+    border-color: color-mix(
+      in srgb,
+      var(--border-subtle),
+      var(--text-primary) 22%
+    );
+    box-shadow: var(--elevation-3);
+    transform: translateY(-2px);
   }
 
   .ui-label {

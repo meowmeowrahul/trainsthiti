@@ -12,7 +12,7 @@ import { URL } from "./config";
 export const AppContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
   const [latest, setLatest] = useState(null);
   const [past, setPast] = useState([]);
   const [lastSynced, setLastSynced] = useState(null);

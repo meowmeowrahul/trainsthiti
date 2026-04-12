@@ -111,7 +111,10 @@ const Home = () => {
             </div>
 
             <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="ui-card-strong p-3">
+              <div
+                className="ui-card-strong p-3"
+                style={{ background: tone.bg, borderColor: tone.border }}
+              >
                 <p className="ui-label">Crowd level</p>
                 <div className="mt-2 flex items-center justify-between gap-3">
                   <p className="ui-value">{level}</p>
